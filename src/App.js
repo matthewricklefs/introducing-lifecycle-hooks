@@ -5,6 +5,14 @@ function Counter() {
   const [count, setCount] = useState(0);
   const [color, setColor] = useState("salmon");
 
+  useEffect(() => {
+    console.log(`I'm in  a useEffect hook, count is ${count}`);
+  }, [count]);
+
+  useEffect(() => {
+    console.log(`I'm in another useEffect hook, count is ${color}`);
+  }, [color]);
+
   const handleColorChange = () => {
     const nextColor = color === "salmon" ? "gold" : "salmon";
 
